@@ -4,11 +4,14 @@
   "description": "calculator app",
   "main": "calculator.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {
+    "ava": "^1.4.0"
   }
 }
