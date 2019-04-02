@@ -4,7 +4,8 @@
   "description": "calculator app",
   "main": "calculator.js",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "test:watch": "ava --watch"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,6 @@
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
-    "ava": "^1.4.0"
+    "ava": "^1.4.1"
   }
 }
