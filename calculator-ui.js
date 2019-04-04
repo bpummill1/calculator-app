@@ -1,6 +1,6 @@
 
 const rs = require('readline-sync');
-const operators = require("./calculator-logic");
+const logic = require("./calculator-logic");
 
 let mathArray = [`subtraction`, `addition`, `multiplication`, `division`];
 let moreCalcs = 'yes';
@@ -8,7 +8,6 @@ let startValue;
 let mathIndex;
 let mathOperator;
 let secondValue;
-let calculation;
 
 // ui stuff
 
@@ -33,7 +32,8 @@ while (moreCalcs === 'yes') {
   mathIndex = rs.keyInSelect(mathArray, 'Operator: ');
   mathOperator = mathArray[mathIndex];
   secondValue = rs.questionInt('Second Value: ');
-  result = operators.addition(startValue,secondValue);
+  let func = logic[mathOperator];
+  result = func(startValue,secondValue);
   console.log(startValue, mathOperator, secondValue, "=", result)
   yesOrNo();
 }

@@ -1,5 +1,5 @@
 import test from "ava";
-import operators from "./calculator-logic";
+import logic from "./calculator-logic";
 
 test("I add things", function(t) {
 	// Arrange
@@ -8,7 +8,7 @@ test("I add things", function(t) {
 	const expected = 3;
 
 	// Act
-	const actual = operators.addition(x,y);
+	const actual = logic.addition(x,y);
 
 	// Assert
 	t.is(actual, expected);
@@ -22,7 +22,7 @@ test("Subtraction: First parameter cannot be a string", function(t) {
     // Act
     // Assert
     t.throws(function () {
-        const result = operators.subtraction(x,y);
+        const result = logic.subtraction(x,y);
         return result;
     });
 });
@@ -35,7 +35,7 @@ test("Subtraction: Second parameter cannot be a string", function(t) {
     // Act
     // Assert
     t.throws(function () {
-        const result = operators.subtraction(x,y);
+        const result = logic.subtraction(x,y);
         return result;
     });
 });
@@ -48,7 +48,7 @@ test("Addition: First parameter cannot be a string", function(t) {
     // Act
     // Assert
     t.throws(function () {
-        const result = operators.addition(x,y);
+        const result = logic.addition(x,y);
         return result;
     });
 });
@@ -61,7 +61,7 @@ test("Addition: Second parameter cannot be a string", function(t) {
     // Act
     // Assert
     t.throws(function () {
-        const result = operators.addtion(x,y);
+        const result = logic.addtion(x,y);
         return result;
     });
 });

@@ -1,4 +1,5 @@
-const operators = {
+
+const logic = {
     subtraction: function(x,y) {
         if (typeof x === "string"  || typeof y === "string") {
             throw new Error("insert a number dummy!");
@@ -30,4 +31,5 @@ const operators = {
 
 };
 
-module.exports = operators;
+
+module.exports = logic;
