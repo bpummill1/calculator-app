@@ -1,7 +1,8 @@
 
 const rs = require('readline-sync');
+const operators = require("./calculator-logic");
 
-let mathArray = [`+`, `-`, `*`, `/`];
+let mathArray = [`subtraction`, `addition`, `multiplication`, `division`];
 let moreCalcs = 'yes';
 let startValue;
 let mathIndex;
@@ -10,6 +11,9 @@ let secondValue;
 let calculation;
 
 // ui stuff
+
+function start() {
+
 let result = rs.questionInt('First Value: ');
 
 // ui stuff
@@ -29,14 +33,16 @@ while (moreCalcs === 'yes') {
   mathIndex = rs.keyInSelect(mathArray, 'Operator: ');
   mathOperator = mathArray[mathIndex];
   secondValue = rs.questionInt('Second Value: ');
-  calculation = startValue + mathOperator + secondValue;
-  result = eval(calculation);
+  result = operators.addition(startValue,secondValue);
   console.log(startValue, mathOperator, secondValue, "=", result)
-  // moreCalcs = rs.question('Keep calculating? yes or no:  ');
   yesOrNo();
 }
 
 console.log('Final value:', result);
+
+};
+
+start();
 
 // Create two modules
 // 1) calculator-ui.js

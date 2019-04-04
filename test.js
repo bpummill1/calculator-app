@@ -1,17 +1,5 @@
 import test from "ava";
-import foo from "./calculator-logic";
-
-test("ben's cool test", function (t) {
-	// Arrange
-    const name = 'Raul';
-
-    // Act
-    const bar = foo.greet(name);
-	
-	// Assert
-	t.is(bar, 'Hi, my name is Raul');
-});
-
+import operators from "./calculator-logic";
 
 test("I add things", function(t) {
 	// Arrange
@@ -20,13 +8,13 @@ test("I add things", function(t) {
 	const expected = 3;
 
 	// Act
-	const actual = foo.math(x,y);
+	const actual = operators.addition(x,y);
 
 	// Assert
 	t.is(actual, expected);
 });
 
-test("First parameter cannot be a string", function(t) {
+test("Subtraction: First parameter cannot be a string", function(t) {
 	// Arrange
 	const x = 'b';
     const y = 2;
@@ -34,12 +22,12 @@ test("First parameter cannot be a string", function(t) {
     // Act
     // Assert
     t.throws(function () {
-        const result = foo.math(x,y);
+        const result = operators.subtraction(x,y);
         return result;
     });
 });
 
-test("Second parameter cannot be a string", function(t) {
+test("Subtraction: Second parameter cannot be a string", function(t) {
 	// Arrange
 	const x = 1;
     const y = 'c';
@@ -47,7 +35,33 @@ test("Second parameter cannot be a string", function(t) {
     // Act
     // Assert
     t.throws(function () {
-        const result = foo.math(x,y);
+        const result = operators.subtraction(x,y);
+        return result;
+    });
+});
+
+test("Addition: First parameter cannot be a string", function(t) {
+	// Arrange
+	const x = 'b';
+    const y = 2;
+
+    // Act
+    // Assert
+    t.throws(function () {
+        const result = operators.addition(x,y);
+        return result;
+    });
+});
+
+test("Addition: Second parameter cannot be a string", function(t) {
+	// Arrange
+	const x = 1;
+    const y = 'c';
+
+    // Act
+    // Assert
+    t.throws(function () {
+        const result = operators.addtion(x,y);
         return result;
     });
 });
