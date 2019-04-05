@@ -65,3 +65,55 @@ test("Addition: Second parameter cannot be a string", function(t) {
         return result;
     });
 });
+
+test("Multiplication: First parameter cannot be a string", function(t) {
+	// Arrange
+	const x = 'b';
+    const y = 2;
+
+    // Act
+    // Assert
+    t.throws(function () {
+        const result = logic.multiplication(x,y);
+        return result;
+    });
+});
+
+test("Multiplication: Second parameter cannot be a string", function(t) {
+	// Arrange
+	const x = 1;
+    const y = 'c';
+
+    // Act
+    // Assert
+    t.throws(function () {
+        const result = logic.multiplication(x,y);
+        return result;
+    });
+});
+
+test("Division: First parameter cannot be a string", function(t) {
+	// Arrange
+	const x = 'b';
+    const y = 2;
+
+    // Act
+    // Assert
+    t.throws(function () {
+        const result = logic.division(x,y);
+        return result;
+    });
+});
+
+test("Division: Second parameter cannot be a string", function(t) {
+	// Arrange
+	const x = 1;
+    const y = 'c';
+
+    // Act
+    // Assert
+    t.throws(function () {
+        const result = logic.division(x,y);
+        return result;
+    });
+});

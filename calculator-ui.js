@@ -4,16 +4,12 @@ const logic = require("./calculator-logic");
 
 let mathArray = [`subtraction`, `addition`, `multiplication`, `division`];
 let moreCalcs = 'yes';
-let startValue;
-let mathIndex;
-let mathOperator;
-let secondValue;
 
 // ui stuff
 
 function start() {
 
-let result = rs.questionInt('First Value: ');
+let result = rs.questionFloat('First Value: ');
 
 // ui stuff
 function yesOrNo(){
@@ -27,14 +23,14 @@ function yesOrNo(){
 // This starts a loop if you need to do more complex calcs, it ends when you say no.
 
 while (moreCalcs === 'yes') {
-  startValue = result;
+  let startValue = result;
   console.log('Current Value: ', startValue)
-  mathIndex = rs.keyInSelect(mathArray, 'Operator: ');
-  mathOperator = mathArray[mathIndex];
-  secondValue = rs.questionInt('Second Value: ');
+  let mathIndex = rs.keyInSelect(mathArray, 'Operator: ');
+  let mathOperator = mathArray[mathIndex];
+  let secondValue = rs.questionFloat('Second Value: ');
   let func = logic[mathOperator];
   result = func(startValue,secondValue);
-  console.log(startValue, mathOperator, secondValue, "=", result)
+  console.log("Result =", result)
   yesOrNo();
 }
 
