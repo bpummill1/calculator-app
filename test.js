@@ -117,3 +117,4 @@ test("Division: Second parameter cannot be a string", function(t) {
         return result;
     });
 });
+

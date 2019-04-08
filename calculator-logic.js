@@ -1,27 +1,27 @@
 
 const logic = {
-    subtraction: function(x,y) {
+    subtraction: (x,y) => {
         if (typeof x === "string"  || typeof y === "string") {
             throw new Error("insert a number dummy!");
         }
         const z = x - y;
         return z;
     },
-    addition: function(x,y) {
+    addition: (x,y) => {
         if (typeof x === "string"  || typeof y === "string") {
             throw new Error("insert a number dummy!");
         }
         const z = x + y;
         return z;
     },
-    multiplication: function(x,y) {
+    multiplication: (x,y) => {
         if (typeof x === "string"  || typeof y === "string") {
             throw new Error("insert a number dummy!");
         }
         const z = x * y;
         return z;
     },
-    division: function(x,y) {
+    division: (x,y) => {
         if (typeof x === "string"  || typeof y === "string") {
             throw new Error("insert a number dummy!");
         }
