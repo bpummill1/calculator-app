@@ -1,10 +1,15 @@
 
 let mathArray = [`subtraction`, `addition`, `multiplication`, `division`];
 let moreCalcs = 'yes';
+const http = require('http');
+const url = require('url');
+
+// http calls
+
 
 // ui stuff
 
-const start = (logic, rs) => {
+const start = (rs, http) => {
 
   let result = rs.questionFloat('First Value: ');
 
@@ -25,8 +30,7 @@ const start = (logic, rs) => {
     let mathIndex = rs.keyInSelect(mathArray, 'Operator: ');
     let mathOperator = mathArray[mathIndex];
     let secondValue = rs.questionFloat('Second Value: ');
-    let func = logic[mathOperator];
-    result = func(startValue,secondValue);
+    result = 
     console.log("Result =", result);
     yesOrNo();
   }
